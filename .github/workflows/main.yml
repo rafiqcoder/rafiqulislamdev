@@ -24,5 +24,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.sundialbd.com
-        username: portfolio@sundialbd.com
+        username:  portfolio@portfolio.sundialbd.com
         password: ${{ secrets.password }}
