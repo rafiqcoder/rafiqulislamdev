@@ -25,4 +25,4 @@ jobs:
       with:
         server: ftp.sundialbd.com
         username: portfolio@sundialbd.com
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.password }}
