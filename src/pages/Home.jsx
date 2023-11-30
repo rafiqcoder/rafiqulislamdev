@@ -1,8 +1,14 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import { motion } from "framer-motion";
 import { useEffect,useState } from "react";
+import {ColorRing} from "react-loader-spinner";
 import "../assets/css/style.css";
 import Me from "../assets/img/Me.png";
-import logo from "../assets/img/logo.png";
+import Header from "../components/Layout/Header";
 import { getPosts } from "../lib/sanity";
+import About from "./About";
+import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+
 const Home = () => {
   const [reloaded,setReloaded] = useState(false);
   const [data,setData] = useState([]);
@@ -12,6 +18,10 @@ const Home = () => {
   let BmouseCursor = document.querySelector(".cursorBig");
   let navLinks = document.querySelectorAll(".menu li");
   let bodyText = document.querySelectorAll(".hoverE");
+
+    const { loginWithRedirect } = useAuth0();
+
+
   
     window.addEventListener("load",() => {
         setReloaded(!reloaded);
@@ -95,7 +105,19 @@ const Home = () => {
   },[reloaded]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-[85%] h-screen flex justify-center items-center">
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={["#b8c480", "#B2A3B5", "#F4442E", "#51E5FF", "#429EA6"]}
+        />
+      </div>
+    );
   }
     
     // console.log(data[0].pageBuilder[0].heading);
@@ -104,110 +126,52 @@ const Home = () => {
       <div className="cursor" />
       <div className="cursorSmall" />
       <div className="cursorBig" />
-      <section id="menuBar" className="menu_bar">
-        <nav className="navbar">
-          <a href="#home" className="logo">
-            <img src={logo} alt />
-          </a>
-          <ul className="menu">
-            <li className="list_item active">
-              {" "}
-              <a href="#home">
-                <i className="fa-duotone fa-house" />
-                Home
-              </a>
-            </li>
-            <li className="list_item">
-              <a href="#">About Me</a>
-            </li>
-            <li className="list_item">
-              <a href="#">Portfoli</a>
-            </li>
-            <li className="list_item">
-              <a href="#">Resume</a>
-            </li>
-            <li className="list_item">
-              <a href="#">Service</a>
-            </li>
-            <li className="list_item">
-              <a href="#">Blog</a>
-            </li>
-            <li className="list_item">
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </section>
+      <Header />
       <section className="content_area">
         <div className="hero_area">
           <div className="hero_area_left sticky">
+            <motion.div
+              initial={{ marginTop: 100 }}
+              animate={{ x: 100, marginTop: 0 }}
+              transition={{ duration: 1 }}
+            />
             <h1 className="hoverE">
-              {data[0]?.pageBuilder[0]?.small_sub_heading}<br />
+              {data[0]?.pageBuilder[0]?.small_sub_heading}
+              <br />
               <span>{data[0]?.pageBuilder[0]?.heading}</span>{" "}
             </h1>
             <p className="hoverE">{data[0]?.pageBuilder[0]?.tagline}</p>
-            <ul className="social hoverE">
-              <li className="s_list_item">
-                <i className="fa-brands fa-facebook" />
-                fb
+            <ul className="social hoverE flex gap-4">
+              <li className="Right_s_list mb-2 ">
+                <FaFacebook className="text-3xl text-blue-700 bg-white rounded-full w-10 h-10 flex justify-center items-center" />{" "}
               </li>
-              <li className="s_list_item">twitter</li>
-              <li className="s_list_item">youtube</li>
-              <li className="s_list_item">linkedin</li>
+              <li className="Right_s_list mb-2">
+                <FaLinkedin className="text-3xl text-blue-700   w-10 h-10 flex justify-center items-center" />{" "}
+              </li>
+              <li className="Right_s_list text-2xl text-red-700 bg-white rounded-full w-10 h-10 flex justify-center items-center">
+                <FaYoutube />
+              </li>
+              <li className="Right_s_list text-2xl text-purple-700 bg-white rounded-full w-10 h-10 flex justify-center items-center">
+                <FaGithub />
+              </li>
             </ul>
             <div className="button_grp hoverE">
               <button className="quote_btn">Get Quote</button>
-              <button className="about_btn">About</button>
+              <button className="about_btn" onClick={() => loginWithRedirect()}>
+                LOGIN
+              </button>
             </div>
           </div>
           <div className="imgArea sticky">
+            <motion.div
+              initial={{ marginTop: 100 }}
+              animate={{ x: 100, marginTop: 0 }}
+              transition={{ duration: 1 }}
+            />
             <img src={Me} alt="Me" />
           </div>
         </div>
-        <section className="about_main">
-          <div className="right_social">
-            <ul className="hoverE">
-              <li className="Right_s_list">fb </li>
-              <li className="Right_s_list">Twitter</li>
-              <li className="Right_s_list">youtube </li>
-              <li className="Right_s_list">instagram </li>
-            </ul>
-          </div>
-          <div className="about_area">
-            <img src="img/Me.png" alt="Me" className="about_img hoverE" />
-            <div className="aboutinfo hoverE">
-              <label htmlFor>Name</label>
-              <li className="info_list">Md Rafiqul Islam</li>
-              <label htmlFor>Birthday</label>
-              <li className="info_list">10/10/1998</li>
-              <label htmlFor>Mail</label>
-              <li className="info_list">rafiqcoder@gmail.com</li>
-              <label htmlFor>Phone</label>
-              <li className="info_list">01878693653</li>
-              <label htmlFor>Address</label>
-              <li className="info_list">Dhaka-1212 ,Bangladesh</li>
-              <label htmlFor>Nationality</label>
-              <li className="info_list">Bangladeshi</li>
-            </div>
-          </div>
-          <div className="about_details hoverE">
-            <h3 className="ftitle">About Me</h3>
-            <h1 className="about_t">
-              World Leading UI/UX designer and developer
-            </h1>
-            <h3 className="abut_sub">
-              A passionate UI/UX Designer and Web Developer based In NYC, USA
-            </h3>
-            <p className="abut_desc">
-              Hi! My name is Md Rafiqul Islam. I am UI/UX designer and a
-              fullstack developer, and very passisonate and dedicated to my
-              work. With 20 years experience as a professional graphic designer,
-              I have acquired the skills and knowledge necessary to make your
-              project a success.
-            </p>
-            <button className="abut_btn"> Download cv </button>
-          </div>
-        </section>
+        <About />
       </section>
     </main>
   );
