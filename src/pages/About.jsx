@@ -1,11 +1,11 @@
 import React from "react";
-import myPic from "../assets/img/my-pic.jpg";
-import reactIcon from "../assets/icons/react.png";
-import node from "../assets/icons/node.png";
-import nextjs from "../assets/icons/nextjs.png";
+import javaScript from "../assets/icons/Javascript.png";
+import typescript from "../assets/icons/Typescript.png";
 import mongoose from "../assets/icons/mongoose.png";
-import typescript from "../assets/icons/typescript.png";
-import javaScript from "../assets/icons/javascript.png";
+import nextjs from "../assets/icons/nextjs.png";
+import node from "../assets/icons/node.png";
+import reactIcon from "../assets/icons/react.png";
+import myPic from "../assets/img/my-pic.jpg";
 
 const About = () => {
   return (
