@@ -1,5 +1,5 @@
 import React from "react";
-import javaScript from "../assets/icons/Javascript.png";
+import javaScript from "../assets/icons/JavaScript.png";
 import typescript from "../assets/icons/Typescript.png";
 import mongoose from "../assets/icons/mongoose.png";
 import nextjs from "../assets/icons/nextjs.png";
