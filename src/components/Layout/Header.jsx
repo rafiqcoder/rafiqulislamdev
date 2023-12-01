@@ -1,31 +1,67 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "../../assets/img/logo.png";
 import '../../assets/css/style.css';
-
+import { FaAngleLeft, FaAngleRight, FaHome } from "react-icons/fa";
 
 const Header = () => {
+  const [collapsed,setCollapsed] = useState(false);
+  const [mobileDevice,setMobileDevice] = useState(false);
+
+  const checkMobileDevice = () => {
+    if(window.innerWidth <= 768){
+      setMobileDevice(true);
+    }
+    else{
+      setMobileDevice(false);
+    }
+  }
+
+  // window.addEventListener('resize',checkMobileDevice);
+
+  useEffect(() => {
+    checkMobileDevice();
+    if (mobileDevice) {
+      setCollapsed(true);
+      
+    }else{
+      setCollapsed(false);
+    }
+  }
+  ,[mobileDevice]);
+
+
     return (
-      <section id="menuBar" className="menu_bar">
+      <section id="menuBar" className="menu_bar  ">
+        <div
+          className="absolute top-10 right-0"
+          onClick={() => setCollapsed(!collapsed)}
+        >
+          {collapsed ? (
+            <FaAngleRight className="text-3xl text-white font-bold" />
+          ) : (
+            <FaAngleLeft className="text-3xl text-white font-bold" />
+          )}
+        </div>
         <nav className="navbar">
           <a href="#home" className="logo">
             <motion.img
-              initial={{ marginTop: 200 }}
-              animate={{ y: 100, marginTop: 0 }}
+              initial={{ x: -100, marginTop: 100 }}
+              animate={{ x: 0, marginTop: 10 }}
               transition={{ duration: 1 }}
+              src={logo}
             />
-            <img src={logo} alt />
           </a>
           <ul className="menu">
             <li className="list_item active">
               {" "}
-              <a href="#home">
-                <i className="fa-duotone fa-house" />
-                Home
+              <a href="#home" className="flex gap-2">
+                <FaHome className="text-2xl" />
+                {!collapsed && <span>Home</span>}
               </a>
             </li>
             <li className="list_item">
-              <a href="#">About Me</a>
+              <a href="#about">About Me</a>
             </li>
             <li className="list_item">
               <a href="#">Portfoli</a>

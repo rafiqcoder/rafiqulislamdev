@@ -4,15 +4,18 @@ import { useEffect,useState } from "react";
 import {ColorRing} from "react-loader-spinner";
 import "../assets/css/style.css";
 import Me from "../assets/img/Me.png";
+import myPic from "../assets/img/my-pic.jpg";
 import Header from "../components/Layout/Header";
 import { getPosts } from "../lib/sanity";
 import About from "./About";
 import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import Portfolio from "./Portfolio/Portfolio";
+
 
 const Home = () => {
   const [reloaded,setReloaded] = useState(false);
   const [data,setData] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [loading,setLoading] = useState(false);
   let mouseCursor = document.querySelector(".cursor");
   let SmouseCursor = document.querySelector(".cursorSmall");
   let BmouseCursor = document.querySelector(".cursorBig");
@@ -38,19 +41,19 @@ const Home = () => {
 
 
     // setup fetch function
-  const fetchProjects = async () => {
+  // const fetchProjects = async () => {
       
-    setLoading(true);
-        const data =  await getPosts();
-        setData(data);
-    };
+  //   setLoading(true);
+  //       const data =  await getPosts();
+  //       setData(data);
+  //   };
 
-    // run fetch function
-  useEffect(() => {
+  //   // run fetch function
+  // useEffect(() => {
     
-    fetchProjects();
-    setLoading(false);
-  },[]);
+  //   fetchProjects();
+  //   setLoading(false);
+  // },[]);
 
   useEffect(() => {
     document.title = "Home | Md Rafiqul Islam";
@@ -127,7 +130,7 @@ const Home = () => {
       <div className="cursorSmall" />
       <div className="cursorBig" />
       <Header />
-      <section className="content_area">
+      <section className="content_area" id="home">
         <div className="hero_area">
           <div className="hero_area_left sticky">
             <motion.div
@@ -168,10 +171,15 @@ const Home = () => {
               animate={{ x: 100, marginTop: 0 }}
               transition={{ duration: 1 }}
             />
-            <img src={Me} alt="Me" />
+            <img
+              src={myPic}
+              alt="Me"
+              className="about_img hoverE rounded-md w-[300px] mr-10 mb-5"
+            />
           </div>
         </div>
         <About />
+        <Portfolio />
       </section>
     </main>
   );

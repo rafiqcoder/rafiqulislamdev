@@ -9,16 +9,17 @@ import javaScript from "../assets/icons/javascript.png";
 
 const About = () => {
   return (
-    <section className="about_main flex flex-col">
+    <section className="about_main flex flex-col" id="about">
       <div className="flex">
         <div className="flex ">
           <div className="about_area ">
             <img
               src={myPic}
               alt="Me"
-              className="about_img hoverE rounded-md w-[300px]"
+              className="about_img hoverE rounded-md w-[300px] mr-10 mb-5"
             />
-            <div className="aboutinfo hoverE  bg-pink-600 p-3 rounded -ml-10 mt-10 mr-10">
+            {
+              /* <div className="aboutinfo hoverE  bg-pink-600 p-3 rounded -ml-10 mt-10 mr-10">
               <label htmlFor className="">
                 Name
               </label>
@@ -33,7 +34,10 @@ const About = () => {
               <li className="info_list">Dhaka-1212 ,Bangladesh</li>
               <label htmlFor>Nationality</label>
               <li className="info_list">Bangladeshi</li>
-            </div>
+            </div> */
+              //blue purple gradient for button with tailwind
+              //https://tailwindcss.com/docs/gradient-color-stops
+            }
           </div>
         </div>
         <div className=" hoverE w-[500px]">
@@ -48,10 +52,18 @@ const About = () => {
             years experience as a professional graphic designer, I have acquired
             the skills and knowledge necessary to make your project a success.
           </p>
-          <button className="abut_btn"> Download cv </button>
+          <button className="abut_btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 rounded-full mt-5 uppercase">
+            {" "}
+            Download cv{" "}
+          </button>
         </div>
       </div>
       <div className="stacks flex gap-5 mt-4">
+        <img
+          src={javaScript}
+          alt=""
+          className="w-[100px] h-[100px] rounded-full"
+        />
         <img
           src={reactIcon}
           alt=""
@@ -64,11 +76,6 @@ const About = () => {
           className="w-[100px] h-[100px] rounded-full"
         />
         <img src={nextjs} alt="" className="w-[100px] h-[100px] rounded-full" />
-        <img
-          src={javaScript}
-          alt=""
-          className="w-[100px] h-[100px] rounded-full"
-        />
         <img
           src={typescript}
           alt=""
