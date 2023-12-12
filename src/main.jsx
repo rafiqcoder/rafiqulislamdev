@@ -7,7 +7,6 @@ import Context from "./Context/Context.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <Auth0Provider
       domain="{dev-f0gjcszhbvzuj21w.us.auth0.com}"
       clientId="{sw47GtmrlOEIsYmTM7wVl7b6lBF9HDzR}"
@@ -21,5 +20,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </BrowserRouter>
       </Context>
     </Auth0Provider>
-  </React.StrictMode>
 );

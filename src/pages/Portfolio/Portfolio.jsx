@@ -1,10 +1,9 @@
 import React from "react";
 // import 'https://unpkg.com/pattern.css';
-import './Portfolio.css';
 import ac from "../../assets/portfolio/ac.png";
-import cycle from "../../assets/portfolio/cycle.png";
 import bbq from "../../assets/portfolio/bbq.png";
-import Me from "../../assets/img/Me.png";
+import cycle from "../../assets/portfolio/cycle.png";
+import "./Portfolio.css";
 import "./patern.css";
 const experiences = [
   {
@@ -22,7 +21,7 @@ const experiences = [
   {
     title: "ESG-Bites",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
-    image:bbq,
+    image: bbq,
     live: ".com",
   },
 ];
