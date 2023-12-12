@@ -1,0 +1,15 @@
+@media screen and (max-width:768px) {
+    .about_main {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    background: rgb(29, 24, 66);
+    color: #fff;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+}

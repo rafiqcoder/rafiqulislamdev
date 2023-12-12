@@ -10,7 +10,8 @@ import { getPosts } from "../lib/sanity";
 import About from "./About";
 import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Portfolio from "./Portfolio/Portfolio";
-
+import Services from "./Services/Services";
+import '../assets/css/home.css'
 
 const Home = () => {
   const [reloaded,setReloaded] = useState(false);
@@ -24,8 +25,6 @@ const Home = () => {
 
     const { loginWithRedirect } = useAuth0();
 
-
-  
     window.addEventListener("load",() => {
         setReloaded(!reloaded);
     })
@@ -131,7 +130,7 @@ const Home = () => {
       <div className="cursorBig" />
       <Header />
       <section className="content_area" id="home">
-        <div className="hero_area">
+        <div className="hero_area flex flex-col-reverse sm:flex-row">
           <div className="hero_area_left sticky">
             <motion.div
               initial={{ marginTop: 100 }}
@@ -179,6 +178,7 @@ const Home = () => {
           </div>
         </div>
         <About />
+        <Services/>
         <Portfolio />
       </section>
     </main>

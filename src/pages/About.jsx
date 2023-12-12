@@ -10,8 +10,8 @@ import myPic from "../assets/img/my-pic.jpg";
 const About = () => {
   return (
     <section className="about_main flex flex-col" id="about">
-      <div className="flex">
-        <div className="flex ">
+      <div className="flex flex-col sm:flex-row">
+        <div className=" ">
           <div className="about_area ">
             <img
               src={myPic}
