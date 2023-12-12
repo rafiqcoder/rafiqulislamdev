@@ -8,10 +8,9 @@
 }
 
 body {
-    font-family: 'Raleway', 'Oswald';
+    font-family: 'Poppins', 'Oswald';
     width: 79vw;
     margin-left: 20vw;
-    /* margin: auto; */
     z-index: -2;
 }
 
@@ -35,7 +34,6 @@ h2 {
     font-family: "Oswald";
     font-size: 30px;
     padding: 10px 0;
-
 }
 h3 {
     line-height: 1.4;
@@ -51,8 +49,4 @@ p{
 #main {
     width: 100%;
     height: auto;
-    /* display: flex; */
-    /* overflow: hidden; */
-
-    /* So the width will be 100% + 17px */
 }
