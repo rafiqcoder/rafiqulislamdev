@@ -1,0 +1,18 @@
+.roundAnimation{
+    animation: round 30s reverse infinite linear;
+}
+.roundAnimation3{
+    animation: round 30s reverse infinite linear;
+}
+.roundAnimation2{
+    animation: round 30s  infinite linear;
+}
+
+@keyframes round {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -4,6 +4,8 @@ import { useEffect,useState } from "react";
 import {ColorRing} from "react-loader-spinner";
 import "../assets/css/style.css";
 import Me from "../assets/img/Me.png";
+
+import javaScript from "../assets/icons/JavaScript.png";
 import myPic from "../assets/img/my-pic.jpg";
 import Header from "../components/Layout/Header";
 import { getPosts } from "../lib/sanity";
@@ -12,7 +14,8 @@ import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Portfolio from "./Portfolio/Portfolio";
 import Services from "./Services/Services";
 import '../assets/css/home.css'
-
+import './Home.css'
+import SkillSpinner from "../components/Layout/SkillSpinner/SkillSpinner";
 const Home = () => {
   const [reloaded,setReloaded] = useState(false);
   const [data,setData] = useState([]);
@@ -124,23 +127,27 @@ const Home = () => {
     
     // console.log(data[0].pageBuilder[0].heading);
   return (
-    <main id="main">
+    <main id="main" className="overflow-hidden">
       <div className="cursor" />
       <div className="cursorSmall" />
       <div className="cursorBig" />
       <Header />
       <section className="content_area" id="home">
-        <div className="hero_area flex flex-col-reverse sm:flex-row">
-          <div className="hero_area_left sticky">
+        <div className="hero_area flex flex-col-reverse sm:flex-row h-screen overflow-hidden relative items-center">
+          <div className="hero_area_left sticky w-[70vw]">
             <motion.div
               initial={{ marginTop: 100 }}
               animate={{ x: 100, marginTop: 0 }}
               transition={{ duration: 1 }}
             />
             <h1 className="hoverE">
-              {data[0]?.pageBuilder[0]?.small_sub_heading}
+              {/* {data[0]?.pageBuilder[0]?.small_sub_heading} */}
+              <div className="text-pink-400 mt-20 -mb-10">Hi,</div>
               <br />
-              <span>{data[0]?.pageBuilder[0]?.heading}</span>{" "}
+              <span className="font-bold text-[50px] ">
+                {/* {data[0]?.pageBuilder[0]?.heading} */}I am a Frontend
+                Developer
+              </span>{" "}
             </h1>
             <p className="hoverE">{data[0]?.pageBuilder[0]?.tagline}</p>
             <ul className="social hoverE flex gap-4">
@@ -164,21 +171,22 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div className="imgArea sticky">
-            <motion.div
+          {/* <div className="imgArea sticky "> */}
+          {/* <motion.div
               initial={{ marginTop: 100 }}
               animate={{ x: 100, marginTop: 0 }}
               transition={{ duration: 1 }}
             />
             <img
-              src={myPic}
+              src={Me}
               alt="Me"
               className="about_img hoverE rounded-md w-[300px] mr-10 mb-5"
-            />
-          </div>
+            /> */}
+          {/* </div> */}
+          <SkillSpinner />
         </div>
         <About />
-        <Services/>
+        <Services />
         <Portfolio />
       </section>
     </main>

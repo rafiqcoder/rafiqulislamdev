@@ -25,6 +25,26 @@ const experiences = [
     live: ".com",
   },
 ];
+const personalProject = [
+  {
+    title: "Banao",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
+    image: ac,
+    live: ".com",
+  },
+  {
+    title: "Live Ivory",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
+    image: cycle,
+    live: ".com",
+  },
+  {
+    title: "ESG-Bites",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
+    image: bbq,
+    live: ".com",
+  },
+];
 
 const Portfolio = () => {
   return (
@@ -43,7 +63,7 @@ const Portfolio = () => {
               />
             </div>
             <div className="body border p-3">
-              <h2>Project title</h2>
+              <h2>{item.title}</h2>
               <h3>position: Frontend Developer</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
@@ -59,7 +79,7 @@ const Portfolio = () => {
         <h1 className="text-center">Personal Best Projects</h1>
       </div>
       <div className="grid grid-col  sm:grid-cols-3 gap-3 m-10">
-        {experiences.map((item) => (
+        {personalProject.map((item) => (
           <div key={item.id} className="bg-gray-900 rounded-t-xl">
             <div className="h-[300px] overflow-hidden phovered">
               <img
@@ -69,12 +89,10 @@ const Portfolio = () => {
               />
             </div>
             <div className="body border p-3">
-              <h2>Project title</h2>
+              <h2>{item.title}</h2>
               <h3>position: Frontend Developer</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                atque inventore ea asperiores consectetur et dicta expedita
-                impedit temporibus quo.
+                {item.desc}
               </p>
               <button className="abut_btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 rounded-full mt-5 uppercase">
                 Live

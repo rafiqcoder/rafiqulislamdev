@@ -72,7 +72,7 @@ const Services = () => {
                     </div>
                     <div className="flex-grow">
                       <h2 className=" text-xl title-font font-medium mb-3">
-                        Integration web
+                        API Integration and Functionality
                       </h2>
                       <p className="leading-relaxed text-sm text-justify">
                         I have designed and developed several websites. I use
@@ -104,7 +104,7 @@ const Services = () => {
                     </div>
                     <div className="flex-grow">
                       <h2 className=" text-xl title-font font-medium mb-3">
-                        Developpement Back-end
+                        Bug Free Developpement
                       </h2>
                       <p className="leading-relaxed text-sm text-justify">
                         As a MERN stack developer, I have been able to develop

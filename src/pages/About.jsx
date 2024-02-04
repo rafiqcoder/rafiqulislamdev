@@ -42,14 +42,14 @@ const About = () => {
         </div>
         <div className=" hoverE w-[500px]">
           <h3 className="ftitle">About Me</h3>
-          <h1 className="about_t">Hi, I am a MERN Stack Developer</h1>
+          <h1 className="about_t">Hi, I am a Frontend Developer</h1>
           <h3 className="abut_sub">
-            A passionate UI/UX Designer and Web Developer.
+            A passionate Frontend Designer and Developer.
           </h3>
           <p className="abut_desc">
             Hi! My name is Md Rafiqul Islam. I am UI/UX designer and a fullstack
-            developer, and very passisonate and dedicated to my work. With 20
-            years experience as a professional graphic designer, I have acquired
+            developer, and very passisonate and dedicated to my work. With 2
+            years experience as a professional web designer, I have acquired
             the skills and knowledge necessary to make your project a success.
           </p>
           <button className="abut_btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 rounded-full mt-5 uppercase">
@@ -69,7 +69,7 @@ const About = () => {
           alt=""
           className="w-[100px] h-[100px] rounded-full"
         />
-        <img src={node} alt="" className="w-[100px] h-[100px] rounded-full" />
+        <img src={node} alt="" className="w-[100px] h-[100px] rounded-full bg-green-800" />
         <img
           src={mongoose}
           alt=""
