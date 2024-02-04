@@ -9,7 +9,7 @@ import styles from "./SkillSpinner.module.css";
 const SkillSpinner = () => {
   return (
     <div>
-      <div className="absolute top-0 -right-[0px]">
+      <div className="absolute top-[5vh] -right-[0px]">
         <span
           className={`border border-gray-400 w-[650px] h-[650px]  rounded-full absolute right-[-300px] top-0 ${styles.roundAnimation3} opacity-[.7] `}
         >
