@@ -133,8 +133,8 @@ const Home = () => {
       <div className="cursorBig" />
       <Header />
       <section className="content_area" id="home">
-        <div className="hero_area flex flex-col-reverse sm:flex-row h-screen overflow-hidden relative items-center">
-          <div className="hero_area_left sticky w-[70vw]">
+        <div className="hero_area flex flex-col-reverse sm:flex-row h-screen overflow-hidden relative items-center ">
+          <div className="hero_area_left sticky w-[70vw] ">
             <motion.div
               initial={{ marginTop: 100 }}
               animate={{ x: 100, marginTop: 0 }}
@@ -144,7 +144,7 @@ const Home = () => {
               {/* {data[0]?.pageBuilder[0]?.small_sub_heading} */}
               <div className="text-pink-400 mt-20 -mb-10">Hi,</div>
               <br />
-              <span className="font-bold text-[50px] ">
+              <span className="font-bold text-[50px]">
                 {/* {data[0]?.pageBuilder[0]?.heading} */}I am a Frontend
                 Developer
               </span>{" "}

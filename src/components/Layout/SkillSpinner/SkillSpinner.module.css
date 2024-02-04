@@ -7,6 +7,10 @@
 .roundAnimation2{
     animation: round 30s  infinite linear;
 }
+.roundAnimation2 img:hover{
+    animation: round 30s  infinite linear;
+    scale: 1.1;
+}
 
 @keyframes round {
     0% {
