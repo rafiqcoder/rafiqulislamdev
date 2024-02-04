@@ -27,19 +27,19 @@ const experiences = [
 ];
 const personalProject = [
   {
-    title: "Banao",
+    title: "AC-Solutions",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
     image: ac,
     live: ".com",
   },
   {
-    title: "Live Ivory",
+    title: "Resale Cycle",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
     image: cycle,
     live: ".com",
   },
   {
-    title: "ESG-Bites",
+    title: "BBQ Tonight",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, reprehenderit aspernatur minus ex recusandae corrupti blanditiis praesentium mollitia voluptatem voluptatibus.",
     image: bbq,
     live: ".com",
